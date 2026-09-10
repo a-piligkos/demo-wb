@@ -2,64 +2,74 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="pt-14 flex-1">
+      <div className="w-full h-screen bg-gray-100 flex flex-col items-center justify-center gap-6 relative">
+        <p className="text-teal-500 text-sm tracking-[0.3em] uppercase">
+          Slow Fashion · Eco Friendly · Timeless
+        </p>
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+          src="/mek_boutique_logo.svg"
+          alt="Mek Boutique Logo"
+          width={300}
+          height={300}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <p className="text-black text-sm tracking-[0.2em]">
+          Sustainable Fashion. Timeless Style.
+        </p>
+        <div className="flex items-center" style={{ marginTop: "2.5rem" }}>
+          <button
+            className="flex items-center gap-3 tracking-[0.15em] active:text-gray-500"
+            style={{
+              color: "#090909",
+              padding: "0.7em 1.7em",
+              fontSize: "18px",
+              borderRadius: "0.5em",
+              background: "#e8e8e8",
+              cursor: "pointer",
+              border: "1px solid #e8e8e8",
+              transition: "all 0.3s",
+              boxShadow: "6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff",
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Shop Now
+          </button>
         </div>
-      </main>
-    </div>
+        <div className="absolute bottom-10 flex flex-col items-center gap-2 text-gray-400">
+          <span className="text-xs tracking-[0.3em] uppercase">Discover</span>
+          <span className="animate-bounce text-lg">↓</span>
+        </div>
+      </div>
+      {/* Brands Section */}
+      <div className="w-full bg-white" style={{ paddingTop: "10rem", paddingBottom: "5rem" }}>
+        <div className="text-center" style={{ paddingTop: "1rem", paddingBottom: "3rem" }}>
+          <h2 className="text-6xl text-black" style={{ letterSpacing: "0.05em" }}>
+            Explore Our World
+          </h2>
+          <p className="text-sm text-gray-400" style={{ marginTop: "1.5rem", letterSpacing: "0.2em" }}>Our brand partners that share our values.</p>
+        </div>
+        <div className="flex gap-1 px-20">
+          <div className="relative w-1/2 overflow-hidden group" style={{ height: "100vh" }}>
+            <Image src="/maisonhotel.png" alt="Maison Hotel" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-500" />
+            <span
+              className="absolute bottom-10 left-10 text-white text-4xl"
+              style={{ fontFamily: "var(--font-cormorant)" }}
+            >
+              Maison Hotel
+            </span>
+          </div>
+          <div className="relative w-1/2 overflow-hidden group" style={{ height: "100vh" }}>
+            <Image src="/lotuseaters.png" alt="Lotus Eaters" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-500" />
+            <span
+              className="absolute bottom-10 left-10 text-white text-4xl"
+              style={{ fontFamily: "var(--font-cormorant)" }}
+            >
+              Lotus Eaters
+            </span>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }
